@@ -20,4 +20,12 @@ public class Grid {
         this.rectangle.setColor(color);
 
     }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
 }

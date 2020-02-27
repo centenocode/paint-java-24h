@@ -2,17 +2,18 @@ import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.lang.reflect.Array;
+import java.util.HashMap;
 
 public class Brush extends Rectangle {
 
-    int[] painted;
-
+    HashMap hashMap;
     Rectangle rectangle;
 
-    public Brush(){
-        this.rectangle = new Rectangle(0,0,20,20);
-
+    public Brush(HashMap hashMap){
+        this.rectangle = new Rectangle(200,0,20,20);
+        this.hashMap = hashMap;
     }
+
     public void init(){
         this.rectangle.setColor(Color.BLACK);
         this.rectangle.fill();
@@ -23,13 +24,7 @@ public class Brush extends Rectangle {
     public void paint(){
         System.out.println(this.rectangle.getX());
         System.out.println(this.rectangle.getY());
-        System.out.println(this.rectangle.getHeight());
-        System.out.println(this.rectangle.getWidth());
-
-
-
-
-
+        hashMap.put(this.rectangle.getX(),this.rectangle.getY());
 
     }
 
