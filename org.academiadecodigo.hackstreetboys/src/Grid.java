@@ -18,6 +18,7 @@ public class Grid {
         this.rectangle = new Rectangle(0,0,400,400);
         this.rectangle.draw();
         this.rectangle.setColor(color);
+        this.rectangle.fill();
 
     }
 

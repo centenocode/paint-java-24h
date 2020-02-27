@@ -23,13 +23,17 @@ public class Brush extends Rectangle {
 
     public void paint(){
         System.out.println(hashMap.get(rectangle.getX()));
-        if((hashMap.get(rectangle.getX())==null)) {
-            hashMap.put(rectangle.getX(), rectangle.getY());
-            System.out.println("draw");
+        if(((hashMap.get(rectangle.getX()) != null) && (hashMap.containsValue(rectangle.getY())))){
+            Rectangle rectangle2 = new Rectangle(rectangle.getX(), (hashMap.get(rectangle.getX())), 20, 20);
+            rectangle2.draw();
+            rectangle2.setColor(Color.WHITE);
+            rectangle2.fill();
+            hashMap.remove(rectangle.getX(),hashMap.get(rectangle.getX()));
+            System.out.println("delete");
 
         } else {
-            hashMap.remove(rectangle.getX());
-            System.out.println("delete");
+            hashMap.put(rectangle.getX(), rectangle.getY());
+            System.out.println("draw");
         }
     }
 
