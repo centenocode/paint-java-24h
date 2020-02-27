@@ -6,10 +6,10 @@ import java.util.HashMap;
 
 public class Brush extends Rectangle {
 
-    HashMap hashMap;
-    Rectangle rectangle;
+    private HashMap <Integer, Integer> hashMap;
+    private Rectangle rectangle;
 
-    public Brush(HashMap hashMap){
+    public Brush(HashMap<Integer, Integer> hashMap){
         this.rectangle = new Rectangle(200,0,20,20);
         this.hashMap = hashMap;
     }
@@ -22,10 +22,27 @@ public class Brush extends Rectangle {
     }
 
     public void paint(){
-        System.out.println(this.rectangle.getX());
-        System.out.println(this.rectangle.getY());
-        hashMap.put(this.rectangle.getX(),this.rectangle.getY());
+        System.out.println(hashMap.get(rectangle.getX()));
+        if((hashMap.get(rectangle.getX())==null)) {
+            hashMap.put(rectangle.getX(), rectangle.getY());
+            System.out.println("draw");
 
+        } else {
+            hashMap.remove(rectangle.getX());
+            System.out.println("delete");
+        }
+    }
+
+
+    public void drawHistory(){
+        for (int i = 0; i <= 399; i++) {
+            if (hashMap.containsKey(i)) {
+                Rectangle rectangle = new Rectangle(i, (hashMap.get(i)), 20, 20);
+                rectangle.draw();
+                rectangle.setColor(Color.BLACK);
+                rectangle.fill();
+            }
+        }
     }
 
 

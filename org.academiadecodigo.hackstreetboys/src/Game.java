@@ -4,10 +4,11 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import java.util.HashMap;
 
 public class Game {
-    HashMap hashMap;
-    Grid grid;
-    Brush brush;
-    BrushControls brushControls;
+
+    private HashMap hashMap;
+    private Grid grid;
+    private Brush brush;
+    private BrushControls brushControls;
 
     public Game() {
         this.hashMap = new HashMap();
@@ -23,13 +24,13 @@ public class Game {
         brushControls.setBrush(brush);
         brushControls.init();
 
-        while(true){getPaintedArea();}
     }
+
 
     public void getPaintedArea() {
         for (int i = 0; i > grid.getRows(); i++) {
             if (hashMap.containsKey(i)) {
-                Rectangle rectangle = new Rectangle(i, ((int) hashMap.get(i)), 20, 20);
+                Rectangle rectangle = new Rectangle(2, 2, 20, 20);
                 rectangle.draw();
                 rectangle.setColor(Color.BLACK);
                 rectangle.fill();

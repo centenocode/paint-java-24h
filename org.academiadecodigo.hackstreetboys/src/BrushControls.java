@@ -1,3 +1,5 @@
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -6,11 +8,6 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 public class BrushControls implements KeyboardHandler {
     private Keyboard keyboard;
     private Brush brush;
-    KeyboardEvent dlPressed;
-    KeyboardEvent drPressed;
-    KeyboardEvent upPressed;
-    KeyboardEvent downPressed;
-
 
     public void init() {
 
@@ -54,38 +51,24 @@ public class BrushControls implements KeyboardHandler {
 
             case KeyboardEvent.KEY_LEFT:
                 brush.moveLeft();
-                System.out.println(brush.rectangle.getX());
-                System.out.println(brush.rectangle.getY());
-                System.out.println(brush.rectangle.getHeight());
-                System.out.println(brush.rectangle.getWidth());
                 break;
 
             case KeyboardEvent.KEY_RIGHT:
                 brush.moveRight();
-                System.out.println(brush.rectangle.getX());
-                System.out.println(brush.rectangle.getY());
-                System.out.println(brush.rectangle.getHeight());
-                System.out.println(brush.rectangle.getWidth());
                 break;
 
             case KeyboardEvent.KEY_UP:
                 brush.moveUp();
-                System.out.println(brush.rectangle.getX());
-                System.out.println(brush.rectangle.getY());
-                System.out.println(brush.rectangle.getHeight());
-                System.out.println(brush.rectangle.getWidth());
                 break;
 
             case KeyboardEvent.KEY_DOWN:
                 brush.moveDown();
-                System.out.println(brush.rectangle.getX());
-                System.out.println(brush.rectangle.getY());
-                System.out.println(brush.rectangle.getHeight());
-                System.out.println(brush.rectangle.getWidth());
                 break;
 
             case KeyboardEvent.KEY_SPACE:
                 brush.paint();
+                brush.drawHistory();
+
                 break;
         }
 
@@ -100,10 +83,4 @@ public class BrushControls implements KeyboardHandler {
     }
 
 
-    public void stop(){
-        keyboard.removeEventListener(dlPressed);
-        keyboard.removeEventListener(drPressed);
-        keyboard.removeEventListener(upPressed);
-        keyboard.removeEventListener(downPressed);
-    }
 }
