@@ -6,6 +6,9 @@ import java.util.Iterator;
 
 public class Game {
 
+    public static final int COLS = 380;
+    public static final int ROWS = 380;
+
     private Grid grid;
     private Brush brush;
     private BrushControls brushControls;

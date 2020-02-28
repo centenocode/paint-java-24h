@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class Grid {
 
-    public static final int PADDING = 0;
+    private static final int PADDING = 0;
     private int cols;
     private int rows;
     private int cellSize = 20;

@@ -47,29 +47,51 @@ public class BrushControls implements KeyboardHandler {
         switch (keyboardEvent.getKey()) {
 
             case KeyboardEvent.KEY_LEFT:
-                brush.moveLeft();
-                brush.appear();
-                System.out.println("left");
-                break;
+                if(brush.getX() == 0){
+                    return;
+                } else {
+                    brush.moveLeft();
+                    brush.appear();
+                    System.out.println("left");
+                    System.out.println(brush.getX());
+                    System.out.println(brush.getY());
+                    break;
+                }
 
             case KeyboardEvent.KEY_RIGHT:
-                brush.moveRight();
-                brush.appear();
-                System.out.println("right");
-                break;
-
+                if(brush.getX() == Game.COLS){
+                    return;
+                } else{
+                    brush.moveRight();
+                    brush.appear();
+                    System.out.println("right");
+                    System.out.println(brush.getX());
+                    System.out.println(brush.getY());
+                    break;
+                }
             case KeyboardEvent.KEY_UP:
-                brush.moveUp();
-                brush.appear();
-                System.out.println("UP");
-                break;
+                if(brush.getY() == 0){
+                    return;
+                }else{
+                    brush.moveUp();
+                    brush.appear();
+                    System.out.println("UP");
+                    System.out.println(brush.getX());
+                    System.out.println(brush.getY());
+                    break;
+                }
 
             case KeyboardEvent.KEY_DOWN:
-                brush.moveDown();
-                brush.appear();
-
-                System.out.println("down");
-                break;
+                if(brush.getY() == Game.ROWS){
+                    return;
+                }else {
+                    brush.moveDown();
+                    brush.appear();
+                    System.out.println("down");
+                    System.out.println(brush.getX());
+                    System.out.println(brush.getY());
+                    break;
+                }
 
             case KeyboardEvent.KEY_SPACE:
                 System.out.println("space");
