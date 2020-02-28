@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/org.academiadecodigo.hackstreetboys/org.academiadecodigo.hackstreetboys.iml" filepath="$PROJECT_DIR$/org.academiadecodigo.hackstreetboys/org.academiadecodigo.hackstreetboys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paint-java-24h.iml" filepath="$PROJECT_DIR$/paint-java-24h.iml" />
     </modules>
   </component>
 </project>

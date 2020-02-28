@@ -1,17 +1,14 @@
-import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 public class BrushControls implements KeyboardHandler {
-    private Keyboard keyboard;
     private Brush brush;
 
     public void init() {
 
-        keyboard = new Keyboard(this);
+        Keyboard keyboard = new Keyboard(this);
 
         // --DLEFT -- //
         KeyboardEvent dlPressed = new KeyboardEvent();
@@ -51,23 +48,33 @@ public class BrushControls implements KeyboardHandler {
 
             case KeyboardEvent.KEY_LEFT:
                 brush.moveLeft();
+                brush.appear();
+                System.out.println("left");
                 break;
 
             case KeyboardEvent.KEY_RIGHT:
                 brush.moveRight();
+                brush.appear();
+                System.out.println("right");
                 break;
 
             case KeyboardEvent.KEY_UP:
                 brush.moveUp();
+                brush.appear();
+                System.out.println("UP");
                 break;
 
             case KeyboardEvent.KEY_DOWN:
                 brush.moveDown();
+                brush.appear();
+
+                System.out.println("down");
                 break;
 
             case KeyboardEvent.KEY_SPACE:
+                System.out.println("space");
                 brush.paint();
-                brush.drawHistory();
+                brush.appear();
 
                 break;
         }
@@ -81,6 +88,5 @@ public class BrushControls implements KeyboardHandler {
     public void setBrush(Brush brush) {
         this.brush = brush;
     }
-
 
 }

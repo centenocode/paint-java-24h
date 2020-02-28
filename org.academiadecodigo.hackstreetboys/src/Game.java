@@ -1,26 +1,30 @@
 import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Game {
 
-    private HashMap  <Integer, Integer> hashMap;
     private Grid grid;
     private Brush brush;
     private BrushControls brushControls;
 
     public Game() {
-        this.hashMap = new HashMap<Integer, Integer>();
         this.grid = new Grid(20, 20);
-        this.brush = new Brush(hashMap);
+        this.brush = new Brush();
         this.brushControls = new BrushControls();
     }
 
     public void init() {
         System.out.println("Hello World!");
-        grid.init(Color.WHITE);
-        brush.init();
+        grid.init();
+        grid.createCells();
+        brush.setGrid(grid);
         brushControls.setBrush(brush);
+        brush.appear();
         brushControls.init();
+
 
     }
 }
